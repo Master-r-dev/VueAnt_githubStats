@@ -16,7 +16,7 @@
                                                 <template #dot>
                                                     <IconPrivate />
                                                 </template>
-                                                <h4>{{ `${item.count} contribution${item.count>1 ?"s":''} in private repositor${item.count>1 ?"ies":'y'}` }}</h4>
+                                                <h4>{{ `${item.count} contribution${item.count>1 ?"s":''} in private repository` }}</h4>
                                                 <span> {{ item.created.substr(0, 10) }} </span>
                                             </a-timeline-item>
                                             <a-timeline-item v-else-if="item.type == 'PushEvent'">
@@ -130,7 +130,7 @@
                                                 <template #dot>
                                                     <IconPrivate />
                                                 </template>
-                                                <h4>{{ `${item.count} contribution${item.count>1 ?"s":''} in private repositor${item.count>1 ?"ies":'y'}` }}</h4>
+                                                <h4>{{ `${item.count} contribution${item.count>1 ?"s":''} in private repository` }}</h4>
                                                 <span> {{ item.created.substr(0, 10) }} </span>
                                             </a-timeline-item>
                                             <a-timeline-item v-else-if="item.type == 'PushEvent'">
