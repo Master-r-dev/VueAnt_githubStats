@@ -16,14 +16,14 @@
                                                 <template #dot>
                                                     <IconPrivate />
                                                 </template>
-                                                <h4>{{ `${item.count} contributions in private repositories` }}</h4>
+                                                <h4>{{ `${item.count} contribution${item.count>1 ?"s":''} in private repositor${item.count>1 ?"ies":'y'}` }}</h4>
                                                 <span> {{ item.created.substr(0, 10) }} </span>
                                             </a-timeline-item>
                                             <a-timeline-item v-else-if="item.type == 'PushEvent'">
                                                 <template #dot>
                                                     <IconCreate />
                                                 </template>
-                                                <h4>{{ `Created ${item.count} commits in 1 repository` }}</h4>
+                                                <h4>{{ `Created ${item.count} commit${item.count>1 ?"s":''} in 1 repository` }}</h4>
                                                 <a-tooltip placement="top">
                                                     <template #title>
                                                         <span>{{item.r_url.slice(19) }}</span>
@@ -46,7 +46,7 @@
                                                 <template #dot>
                                                     <IconPull />
                                                 </template>
-                                                <h4>{{ `Opened ${item.count} pull requests in 1 repository` }}</h4>
+                                                <h4>{{ `Opened ${item.count} pull request${item.count>1 ?"s":''} in 1 repository` }}</h4>
                                                 <a-tooltip placement="top">
                                                     <template #title>
                                                         <span>{{ item.r_url.slice(19) }}</span>
@@ -68,7 +68,7 @@
                                                 <template #dot>
                                                     <IconReview />
                                                 </template>
-                                                <h4>{{ `Reviewed ${item.count} requests in 1 repository` }}</h4>
+                                                <h4>{{ `Reviewed ${item.count} request${item.count>1 ?"s":''} in 1 repository` }}</h4>
                                                 <a-tooltip placement="top">
                                                     <template #title>
                                                         <span>{{ item.r_url.slice(19) }}</span>
@@ -91,7 +91,7 @@
                                                 <template #dot>
                                                     <IconGit />
                                                 </template>
-                                                <h4>{{ `Other ${item.count} contributions` }}</h4>
+                                                <h4>{{ `Other ${item.count} contribution${item.count>1 ?"s":''}` }}</h4>
                                                 <a-tooltip placement="top">
                                                     <template #title>
                                                         <span>{{ item.r_url.slice(19) }}</span>
@@ -130,14 +130,14 @@
                                                 <template #dot>
                                                     <IconPrivate />
                                                 </template>
-                                                <h4>{{ `${item.count} contributions in private repositories` }}</h4>
+                                                <h4>{{ `${item.count} contribution${item.count>1 ?"s":''} in private repositor${item.count>1 ?"ies":'y'}` }}</h4>
                                                 <span> {{ item.created.substr(0, 10) }} </span>
                                             </a-timeline-item>
                                             <a-timeline-item v-else-if="item.type == 'PushEvent'">
                                                 <template #dot>
                                                     <IconCreate />
                                                 </template>
-                                                <h4>{{ `Created ${item.count} commits in 1 repository` }}</h4>
+                                                <h4>{{ `Created ${item.count} commit${item.count>1 ?"s":''} in 1 repository` }}</h4>
                                                 <a-tooltip placement="top">
                                                     <template #title>
                                                         <span>{{item.r_url.slice(19) }}</span>
@@ -160,7 +160,7 @@
                                                 <template #dot>
                                                     <IconPull />
                                                 </template>
-                                                <h4>{{ `Opened ${item.count} pull requests in 1 repository` }}</h4>
+                                                <h4>{{ `Opened ${item.count} pull request${item.count>1 ?"s":''} in 1 repository` }}</h4>
                                                 <a-tooltip placement="top">
                                                     <template #title>
                                                         <span>{{ item.r_url.slice(19) }}</span>
@@ -182,7 +182,7 @@
                                                 <template #dot>
                                                     <IconReview />
                                                 </template>
-                                                <h4>{{ `Reviewed ${item.count} requests in 1 repository` }}</h4>
+                                                <h4>{{ `Reviewed ${item.count} request${item.count>1 ?"s":''} in 1 repository` }}</h4>
                                                 <a-tooltip placement="top">
                                                     <template #title>
                                                         <span>{{ item.r_url.slice(19) }}</span>
@@ -205,7 +205,7 @@
                                                 <template #dot>
                                                     <IconGit />
                                                 </template>
-                                                <h4>{{ `Other ${item.count} contributions` }}</h4>
+                                                <h4>{{ `Other ${item.count} contribution${item.count>1 ?"s":''}` }}</h4>
                                                 <a-tooltip placement="top">
                                                     <template #title>
                                                         <span>{{ item.r_url.slice(19) }}</span>
@@ -253,15 +253,12 @@ import type { TabsProps } from 'ant-design-vue';
  
 const activeKey = ref(0);
 const changeYear: TabsProps['onTabClick'] = function (this: any, val) { 
-    console.log(val)
     this.activeKey = val;
-    this.toggleODay=false;
-    this.odD='null'
+    this.toggleODay=false; 
     this.$emit('changeYear', val)
 };
 const handleClick = function (this: any) {
-    this.toggleODay=false;
-    this.odD='null'
+    this.toggleODay=false; 
     this.scr=!this.scr
 }
 
