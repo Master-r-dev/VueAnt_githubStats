@@ -92,8 +92,7 @@
       }
     },
     methods: { 
-      handleClick(e:any,d:string){
-        console.log(e)
+      handleClick(e:any,d:string){ 
         e.srcElement.attributes['style'].value='background-color: #056dba;'
         this.$emit('pickDate',{d,t:true})
       },
