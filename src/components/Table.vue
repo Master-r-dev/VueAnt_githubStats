@@ -93,7 +93,8 @@
     },
     methods: { 
       handleClick(e:any,d:string){
-        e.originalTarget.attributes['style'].value='background-color: #056dba;'
+        console.log(e)
+        e.srcElement.attributes['style'].value='background-color: #056dba;'
         this.$emit('pickDate',{d,t:true})
       },
       createDate,
